@@ -1,17 +1,18 @@
 package base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-import java.util.List;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import pages.HomePage;
 
 public class BaseTests {
     private WebDriver webDriver;
+    protected HomePage homePage;
 
+    @BeforeClass
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions co = new ChromeOptions();
@@ -20,20 +21,11 @@ public class BaseTests {
         webDriver.get("https://the-internet.herokuapp.com/");
         webDriver.manage().window().maximize();
 
-        /*
-        WebElement inputsLink = webDriver.findElement(By.linkText("Inputs"));
-        inputsLink.click();
-*/
-        WebElement shiftingCont = webDriver.findElement(By.linkText("Shifting Content"));
-        shiftingCont.click();
+        homePage = new HomePage(webDriver);
+    }
 
-        WebElement menu = webDriver.findElement(By.linkText("Example 1: Menu Element"));
-        menu.click();
-
-        List<WebElement> links = webDriver.findElements(By.tagName("li"));
-        System.out.println("Cantidad de links: " + links.size());
-
-        System.out.println(webDriver.getTitle());
+    @AfterClass
+    public void tearDown(){
         webDriver.quit();
     }
 
