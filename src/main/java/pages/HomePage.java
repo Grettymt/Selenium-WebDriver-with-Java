@@ -29,6 +29,16 @@ public class HomePage {
         clickLink("Key Presses");
         return new KeyPressesPage(webDriver);
     }
+    
+    public AlertsPage clickJavaScriptAlerts(){
+        clickLink("JavaScript Alerts");
+        return new AlertsPage(webDriver);
+    }
+
+    public FileUploadPage clickFileUpload(){
+        clickLink("File Upload");
+        return new FileUploadPage(webDriver);
+    }
 
     private void clickLink(String linkText){
         webDriver.findElement(By.linkText(linkText)).click();
