@@ -40,6 +40,14 @@ public class HomePage {
         return new FileUploadPage(webDriver);
     }
 
+    /**
+     * Method that performs click in the WYSIWYG editor
+     */
+    public WysisygEditorPage clickWysiwygEditor(){
+        clickLink("WYSIWYG Editor");
+        return new WysisygEditorPage(webDriver);
+    }
+
     private void clickLink(String linkText){
         webDriver.findElement(By.linkText(linkText)).click();
     }
