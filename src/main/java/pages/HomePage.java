@@ -29,7 +29,10 @@ public class HomePage {
         clickLink("Key Presses");
         return new KeyPressesPage(webDriver);
     }
-    
+
+    /**
+     * Method that allows you to navigate to the alerts page and perform additional actions on that page.
+     */
     public AlertsPage clickJavaScriptAlerts(){
         clickLink("JavaScript Alerts");
         return new AlertsPage(webDriver);

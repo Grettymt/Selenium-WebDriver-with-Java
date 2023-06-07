@@ -7,6 +7,10 @@ import static org.testng.Assert.assertEquals;
 
 public class AlertTests extends BaseTests {
 
+    /**
+     * Method used to verify that when activating and accepting an alert on the JavaScript alerts page,
+     * the expected success message is displayed.
+     */
     @Test
     public void testAcceptAlert(){
         var alertsPage = homePage.clickJavaScriptAlerts();
@@ -15,6 +19,9 @@ public class AlertTests extends BaseTests {
         assertEquals(alertsPage.getResult(), "You successfully clicked an alert", "Results text incorrect");
     }
 
+    /**
+     * Method used to verify that the text obtained from an alert is as expected.
+     */
     @Test
     public void testGetTextFromAlert(){
         var alertsPage = homePage.clickJavaScriptAlerts();
@@ -24,6 +31,9 @@ public class AlertTests extends BaseTests {
         assertEquals(text, "I am a JS Confirm", "Alert text incorrect");
     }
 
+    /**
+     * Method that allows verifying the functionality of entering a value in an alert and checking the result.
+     */
     @Test
     public void testSetInputInAlert(){
         var alertsPage = homePage.clickJavaScriptAlerts();
