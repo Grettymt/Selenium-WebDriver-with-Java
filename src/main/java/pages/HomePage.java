@@ -51,6 +51,21 @@ public class HomePage {
         return new WysisygEditorPage(webDriver);
     }
 
+    public LargeAndDeepDomPage clickLargeAndDeepDom(){
+        clickLink("Large & Deep DOM");
+        return new LargeAndDeepDomPage(webDriver);
+    }
+
+    public InfiniteScrollPage clickInfiniteScroll(){
+        clickLink("Infinite Scroll");
+        return new InfiniteScrollPage(webDriver);
+    }
+
+    public DynamicLoadingPage clickDynamicLoading(){
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage(webDriver);
+    }
+
     private void clickLink(String linkText){
         webDriver.findElement(By.linkText(linkText)).click();
     }
