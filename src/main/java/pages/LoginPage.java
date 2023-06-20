@@ -23,16 +23,28 @@ public class LoginPage {
     }
 
     /**
-     * Interaction with elements
+     * --- Interaction with elements ----
+     */
+
+    /**
+     * @param username, ingresar un nombre de usuario en un campo de texto
      */
     public void setUsername(String username){
         webDriver.findElement(usernameField).sendKeys(username);
     }
 
+    /**
+     *
+     * @param password, ingresar una contraseña en un campo de texto
+     */
     public void setPassword(String password){
         webDriver.findElement(passwordField).sendKeys(password);
     }
 
+    /**
+     * Hacer clic en un botón de inicio de sesión en la página web
+     * @return
+     */
     public SecureAreaPage clickLoginButton(){
         webDriver.findElement(loginButton).click();
         return new SecureAreaPage(webDriver);
