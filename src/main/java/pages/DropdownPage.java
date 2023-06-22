@@ -10,9 +10,21 @@ import java.util.stream.Collectors;
 
 public class DropdownPage {
 
+    /**
+     * This variable is used to store an instance of the WebDriver controller, which is an interface provided by
+     * Selenium to interact with web browsers.
+     */
     private WebDriver webDriver;
+
+    /**
+     * Locator
+     */
     private By dropdown = By.id("dropdown");
 
+    /**
+     * Constructor
+     * @param webDriver
+     */
     public DropdownPage(WebDriver webDriver){
         this.webDriver = webDriver;
     }

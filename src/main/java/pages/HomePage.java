@@ -4,17 +4,33 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
+    /**
+     * This variable is used to store an instance of the WebDriver controller, which is an interface provided by
+     * Selenium to interact with web browsers.
+     */
     private WebDriver webDriver;
 
+    /**
+     * Constructor
+     * @param webDriver
+     */
     public HomePage (WebDriver webDriver){
         this.webDriver = webDriver;
     }
 
+    /**
+     * Method that allows you to click the "Form Authentication" link and navigate to the login page
+     * @return
+     */
     public LoginPage clickFormAthentication(){
         clickLink("Form Authentication");
         return new LoginPage(webDriver);
     }
 
+    /**
+     * Method that allows you to click the "Dropdown" link
+     * @return
+     */
     public DropdownPage clickDropDown(){
         clickLink("Dropdown");
         return new DropdownPage(webDriver);
@@ -71,6 +87,10 @@ public class HomePage {
         return new MultipleWindowsPage(webDriver);
     }
 
+    /**
+     * Method that allows you to click on a link within the web page
+     * @param linkText
+     */
     private void clickLink(String linkText){
         webDriver.findElement(By.linkText(linkText)).click();
     }
